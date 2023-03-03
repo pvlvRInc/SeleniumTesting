@@ -8,7 +8,7 @@ class BasePage:
         self.driver = driver
         self.base_url = "https://ya.ru/"
 
-    def go_to_base_url(self):
+    def go_to_site(self):
         return self.driver.get(self.base_url)
 
     def find_element(self, locator, time=5):

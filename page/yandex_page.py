@@ -6,7 +6,7 @@ from page.base_page import BasePage
 
 class YandexLocators:
     LOCATOR_YANDEX_SEARCH_FIELD = (By.NAME, "text")
-    LOCATOR_YANDEX_SUGGEST = (By.CLASS_NAME, "mini-suggest__popup-content")
+    LOCATOR_YANDEX_SUGGEST = (By.XPATH, "//ul[@class='mini-suggest__popup-content']")
     LOCATOR_YANDEX_NAVIGATION_BAR = (By.CSS_SELECTOR, ".service__name")
     LOCATOR_YANDEX_LINKS = (By.CLASS_NAME, "Path-Item")
 
@@ -23,6 +23,10 @@ class Page(BasePage):
         search_field = self.find_element(YandexLocators.LOCATOR_YANDEX_SEARCH_FIELD)
         search_field.send_keys(Keys.ENTER)
         return search_field
+
+    def check_suggest(self):
+        suggest = self.find_element(YandexLocators.LOCATOR_YANDEX_SUGGEST)
+        return suggest
 
     def get_navigation_bar_text(self):
         elements = self.find_elements(YandexLocators.LOCATOR_YANDEX_NAVIGATION_BAR)
