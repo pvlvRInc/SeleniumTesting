@@ -42,3 +42,7 @@ def test_yandex_images(browser):
     ya_page.click_for_next_image()
     second_opened_image_href = ya_page.get_opened_image_href()
     assert first_opened_image_href != second_opened_image_href
+
+    ya_page.click_for_previous_image()
+    third_opened_image_href = ya_page.get_opened_image_href()
+    assert first_opened_image_href == third_opened_image_href
