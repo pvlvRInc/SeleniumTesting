@@ -24,16 +24,12 @@ class Page(BasePage):
         search_field.send_keys(Keys.ENTER)
         return search_field
 
-    def check_suggest(self):
-        suggest = self.find_element(YandexLocators.LOCATOR_YANDEX_SUGGEST)
-        return suggest
+    def get_navigation_bar_text(self):
+        elements = self.find_elements(YandexLocators.LOCATOR_YANDEX_NAVIGATION_BAR)
+        nav_bar_text = [x.text for x in elements if len(x.text) > 0]
+        return nav_bar_text
 
-    def check_navigation_bar(self):
-        all_list = self.find_elements(YandexLocators.LOCATOR_YANDEX_NAVIGATION_BAR, time=5)
-        nav_bar_menu = [x.text for x in all_list if len(x.text) > 0]
-        return nav_bar_menu
-
-    def check_links(self):
-        all_list = self.find_elements(YandexLocators.LOCATOR_YANDEX_LINKS, time=5)
-        search_links = [x.text for x in all_list if len(x.text) > 0]
-        return search_links
+    def get_links_text(self):
+        elements = self.find_elements(YandexLocators.LOCATOR_YANDEX_NAVIGATION_BAR)
+        search_links_text = [x.text for x in elements if len(x.text) > 0]
+        return search_links_text
