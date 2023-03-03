@@ -34,3 +34,7 @@ def test_yandex_images(browser):
     first_category.click()
     search_field_text = ya_page.get_search_field_text()
     assert search_field_text == first_category.text
+
+    ya_page.click_on_first_image()
+    first_opened_image_href = ya_page.get_opened_image_href()
+    assert bool(first_opened_image_href)

@@ -63,3 +63,12 @@ class Page(BasePage):
     def get_search_field_text(self):
         search_field = self.find_element(YandexLocators.LOCATOR_YANDEX_SEARCH_FIELD)
         return search_field.get_attribute('value')
+
+    def click_on_first_image(self):
+        images = self.find_elements(YandexLocators.LOCATOR_YANDEX_IMAGES)
+        images[0].click()
+        return images
+
+    def get_opened_image_href(self):
+        image = self.find_element(YandexLocators.LOCATOR_YANDEX_IMAGE_OPEN_BUTTON)
+        return image.get_attribute('href')
