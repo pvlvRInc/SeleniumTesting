@@ -16,7 +16,16 @@ def test_yandex_search(browser):
     links = ya_page.get_links_text()
     assert 'tensor.ru' == links[0]
 
+
 def test_yandex_images(browser):
     ya_page = Page(browser)
     ya_page.go_to_site()
 
+    home_button = ya_page.get_home_button()
+    assert bool(home_button)
+
+    ya_page.click_home_button()
+    ya_page.click_images_button()
+    ya_page.switch_tab(1)
+    current_url = ya_page.get_current_url()
+    assert current_url == "https://yandex.ru/images/"
