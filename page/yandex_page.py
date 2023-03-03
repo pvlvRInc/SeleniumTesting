@@ -10,6 +10,14 @@ class YandexLocators:
     LOCATOR_YANDEX_NAVIGATION_BAR = (By.CSS_SELECTOR, ".service__name")
     LOCATOR_YANDEX_LINKS = (By.CLASS_NAME, "Path-Item")
 
+    LOCATOR_YANDEX_HOME_BUTTON = (By.CLASS_NAME, "services-pinned__all")
+    LOCATOR_YANDEX_IMAGES_BUTTON = (By.XPATH, "//a[@aria-label='Картинки']")
+    LOCATOR_YANDEX_IMAGE_CATEGORIES = (By.CLASS_NAME, "PopularRequestList-Item")
+    LOCATOR_YANDEX_IMAGES = (By.CLASS_NAME, "serp-item__link")
+    LOCATOR_YANDEX_OPENED_IMAGE = (By.CLASS_NAME, "MMImage-Origin")
+    LOCATOR_YANDEX_IMAGE_OPEN_BUTTON = (By.XPATH, "//a[contains(@class, 'MMViewerButtons-OpenImage')]")
+    LOCATOR_YANDEX_NEXT_IMAGE_BUTTON = (By.CLASS_NAME, "CircleButton_type_next")
+    LOCATOR_YANDEX_PREVIOUS_IMAGE_BUTTON = (By.CLASS_NAME, "CircleButton_type_prev")
 
 class Page(BasePage):
 
