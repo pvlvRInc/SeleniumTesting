@@ -45,3 +45,18 @@ class Page(BasePage):
         elements = self.find_elements(YandexLocators.LOCATOR_YANDEX_NAVIGATION_BAR)
         search_links_text = [x.text for x in elements if len(x.text) > 0]
         return search_links_text
+
+    def get_home_button(self):
+        home_button = self.find_element(YandexLocators.LOCATOR_YANDEX_HOME_BUTTON)
+        return home_button
+
+    def click_home_button(self):
+        home_button = self.find_element(YandexLocators.LOCATOR_YANDEX_HOME_BUTTON)
+        home_button.click()
+        return home_button
+
+    def click_images_button(self):
+        images_button = self.find_element(YandexLocators.LOCATOR_YANDEX_IMAGES_BUTTON)
+        images_button.click()
+        return images_button
+
