@@ -72,3 +72,13 @@ class Page(BasePage):
     def get_opened_image_href(self):
         image = self.find_element(YandexLocators.LOCATOR_YANDEX_IMAGE_OPEN_BUTTON)
         return image.get_attribute('href')
+
+    def click_for_next_image(self):
+        button = self.find_element(YandexLocators.LOCATOR_YANDEX_NEXT_IMAGE_BUTTON)
+        button.click()
+        return button
+
+    def click_for_previous_image(self):
+        button = self.find_element(YandexLocators.LOCATOR_YANDEX_PREVIOUS_IMAGE_BUTTON)
+        button.click()
+        return button
