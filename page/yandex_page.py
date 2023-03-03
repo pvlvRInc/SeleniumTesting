@@ -19,6 +19,7 @@ class YandexLocators:
     LOCATOR_YANDEX_NEXT_IMAGE_BUTTON = (By.CLASS_NAME, "CircleButton_type_next")
     LOCATOR_YANDEX_PREVIOUS_IMAGE_BUTTON = (By.CLASS_NAME, "CircleButton_type_prev")
 
+
 class Page(BasePage):
 
     def enter_word(self, word):
@@ -50,13 +51,15 @@ class Page(BasePage):
         home_button = self.find_element(YandexLocators.LOCATOR_YANDEX_HOME_BUTTON)
         return home_button
 
-    def click_home_button(self):
-        home_button = self.find_element(YandexLocators.LOCATOR_YANDEX_HOME_BUTTON)
-        home_button.click()
-        return home_button
-
     def click_images_button(self):
         images_button = self.find_element(YandexLocators.LOCATOR_YANDEX_IMAGES_BUTTON)
         images_button.click()
         return images_button
 
+    def get_categories(self):
+        categories = self.find_elements(YandexLocators.LOCATOR_YANDEX_IMAGE_CATEGORIES, time=5)
+        return categories
+
+    def get_search_field_text(self):
+        search_field = self.find_element(YandexLocators.LOCATOR_YANDEX_SEARCH_FIELD)
+        return search_field.get_attribute('value')

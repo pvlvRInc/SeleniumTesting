@@ -24,8 +24,13 @@ def test_yandex_images(browser):
     home_button = ya_page.get_home_button()
     assert bool(home_button)
 
-    ya_page.click_home_button()
+    home_button.click()
     ya_page.click_images_button()
     ya_page.switch_tab(1)
     current_url = ya_page.get_current_url()
     assert current_url == "https://yandex.ru/images/"
+
+    first_category = ya_page.get_categories()[0]
+    first_category.click()
+    search_field_text = ya_page.get_search_field_text()
+    assert search_field_text == first_category.text
