@@ -43,7 +43,7 @@ class Page(BasePage):
         return nav_bar_text
 
     def get_links_text(self):
-        elements = self.find_elements(YandexLocators.LOCATOR_YANDEX_NAVIGATION_BAR)
+        elements = self.find_elements(YandexLocators.LOCATOR_YANDEX_LINKS)
         search_links_text = [x.text for x in elements if len(x.text) > 0]
         return search_links_text
 
